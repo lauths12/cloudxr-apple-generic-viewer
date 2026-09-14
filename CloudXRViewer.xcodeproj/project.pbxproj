@@ -28,6 +28,7 @@
 		5573C3912DA4B5A400C7003B /* LaunchView+iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5573C3902DA4B5A400C7003B /* LaunchView+iOS.swift */; };
 		5573C5362DA6DC6400C7003B /* ServerActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5573C5342DA6DC6000C7003B /* ServerActionsView.swift */; };
 		5573C5372DA70EFC00C7003B /* ServerActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5573C5342DA6DC6000C7003B /* ServerActionsView.swift */; };
+		5CC921DB30473E140074D4F5 /* CloudXRKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5CC921DA30473E140074D4F5 /* CloudXRKit */; };
 		8602F80E2E3845780038864F /* SessionConfigView+iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8602F80D2E3845780038864F /* SessionConfigView+iOS.swift */; };
 		8602F8102E3845880038864F /* SessionConfigView+visionOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8602F80F2E3845880038864F /* SessionConfigView+visionOS.swift */; };
 		8650F4D72E6949F9009E755A /* MainContentView+visionOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8650F4D62E6949F9009E755A /* MainContentView+visionOS.swift */; };
@@ -44,7 +45,6 @@
 		9CAEE0ED2D307CF90030E3F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01AFA4712BF7D954004B6F6B /* Preview Assets.xcassets */; };
 		9CAEE0EE2D307CF90030E3F6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 01AFA44B2BF7D8C5004B6F6B /* Settings.bundle */; };
 		9CAEE0EF2D307CF90030E3F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01AFA43D2BF7D8C5004B6F6B /* Assets.xcassets */; };
-		9CAEE0F82D3082160030E3F6 /* CloudXRViewer-visionOS-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CAEE0F72D3082160030E3F6 /* CloudXRViewer-visionOS-Info.plist */; };
 		9CC51E182D308742003A1CF0 /* Color+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC51E172D308742003A1CF0 /* Color+hex.swift */; };
 		9CC51E192D308742003A1CF0 /* Color+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC51E172D308742003A1CF0 /* Color+hex.swift */; };
 		A725B0302C6EC005000248FE /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A725B02F2C6EC005000248FE /* StarRatingView.swift */; };
@@ -123,6 +123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01C927EC2CB9BF64006D4D8D /* CloudXRKit in Frameworks */,
+				5CC921DB30473E140074D4F5 /* CloudXRKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +266,7 @@
 			name = "CloudXRViewer-visionOS";
 			packageProductDependencies = (
 				01C927EB2CB9BF64006D4D8D /* CloudXRKit */,
+				5CC921DA30473E140074D4F5 /* CloudXRKit */,
 			);
 			productName = CloudXRViewer;
 			productReference = 55D382202E99B922009D89EB /* CloudXRViewer.app */;
@@ -278,7 +280,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
-				LastUpgradeCheck = 1620;
+				LastUpgradeCheck = 2660;
 				TargetAttributes = {
 					01A8A6652BD99BC500D84DBC = {
 						CreatedOnToolsVersion = 15.3;
@@ -298,6 +300,9 @@
 				Base,
 			);
 			mainGroup = EAA206412B16737300B5867E;
+			packageReferences = (
+				5CC921D930473E140074D4F5 /* XCRemoteSwiftPackageReference "cloudxr-framework" */,
+			);
 			productRefGroup = EAA206412B16737300B5867E;
 			projectDirPath = "";
 			projectRoot = "";
@@ -334,7 +339,6 @@
 				01AFA4732BF7D954004B6F6B /* Preview Assets.xcassets in Resources */,
 				01AFA4672BF7D8C5004B6F6B /* Settings.bundle in Resources */,
 				9C981CE92D30968500C3A953 /* Assets.xcassets in Resources */,
-				9CAEE0F82D3082160030E3F6 /* CloudXRViewer-visionOS-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -782,6 +786,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "xrsimulator xros";
 				TARGETED_DEVICE_FAMILY = visionOS;
 				XROS_DEPLOYMENT_TARGET = 2.4;
@@ -820,6 +825,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "xrsimulator xros";
 				TARGETED_DEVICE_FAMILY = visionOS;
 				XROS_DEPLOYMENT_TARGET = 2.4;
@@ -868,7 +874,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_ASSET_PATHS = "\"CloudXRViewer/Preview Content\"";
-				DEVELOPMENT_TEAM = 6KR3T733EC;
+				DEVELOPMENT_TEAM = 67X3V3745P;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -890,7 +896,9 @@
 				INFOPLIST_FILE = "CloudXRViewer/visionOS/CloudXRViewer-visionOS-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "NVIDIA CloudXR Viewer";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
+				INFOPLIST_KEY_NSHandsTrackingUsageDescription = "Enables sending hand positions to a server.";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Enables connecting to a local server.";
+				INFOPLIST_KEY_NSWorldSensingUsageDescription = "Enables placing objects.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -907,6 +915,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				"OTHER_SWIFT_FLAGS[arch=*]" = "$(OTHER_SWIFT_FLAGS)";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=xros*]" = com.laura.cloudxrviewer;
 				PRODUCT_NAME = CloudXRViewer;
 				SDKROOT = xros;
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
@@ -965,7 +974,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"CloudXRViewer/Preview Content\"";
-				DEVELOPMENT_TEAM = 6KR3T733EC;
+				DEVELOPMENT_TEAM = 67X3V3745P;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -981,7 +990,9 @@
 				INFOPLIST_FILE = "CloudXRViewer/visionOS/CloudXRViewer-visionOS-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "NVIDIA CloudXR Viewer";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
+				INFOPLIST_KEY_NSHandsTrackingUsageDescription = "Enables sending hand positions to a server.";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Enables connecting to a local server.";
+				INFOPLIST_KEY_NSWorldSensingUsageDescription = "Enables placing objects.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -997,6 +1008,7 @@
 				MTL_FAST_MATH = YES;
 				"OTHER_SWIFT_FLAGS[arch=*]" = "$(OTHER_SWIFT_FLAGS)";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=xros*]" = com.laura.cloudxrviewer;
 				PRODUCT_NAME = CloudXRViewer;
 				SDKROOT = xros;
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
@@ -1054,9 +1066,25 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		5CC921D930473E140074D4F5 /* XCRemoteSwiftPackageReference "cloudxr-framework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/NVIDIA/cloudxr-framework";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		01C927EB2CB9BF64006D4D8D /* CloudXRKit */ = {
 			isa = XCSwiftPackageProductDependency;
+			productName = CloudXRKit;
+		};
+		5CC921DA30473E140074D4F5 /* CloudXRKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CC921D930473E140074D4F5 /* XCRemoteSwiftPackageReference "cloudxr-framework" */;
 			productName = CloudXRKit;
 		};
 		9CAEE0BD2D307CF90030E3F6 /* CloudXRKit */ = {

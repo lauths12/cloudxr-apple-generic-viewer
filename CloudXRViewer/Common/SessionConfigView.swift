@@ -21,6 +21,7 @@
 import SwiftUI
 import CloudXRKit
 import OSLog
+import Security
 
 struct SessionConfigView: View {
     @AppStorage("hostAddress") var hostAddress: String = ""
@@ -53,6 +54,10 @@ struct SessionConfigView: View {
 
     @Binding var application: Application
     @State var isGuestModePopoverPresented: Bool = false
+
+    private var clientToken: String {
+        Bundle.main.object(forInfoDictionaryKey: "CXRClientToken") as? String ?? ""
+    }
 
     var sessionConnected: Bool {
         if let session = appModel.session {
@@ -228,7 +233,16 @@ struct SessionConfigView: View {
                 )
             }
         } else {
-            cxrConfig.connectionType = .local(ip: hostAddress)
+            cxrConfig.connectionType = .localSecure(
+                ip: hostAddress,
+                clientToken: clientToken,
+                certificateValidationHandler: { challenge in
+                    guard let serverTrust = challenge.protectionSpace.serverTrust else {
+                        return (.cancelAuthenticationChallenge, nil)
+                    }
+                    return (.useCredential, URLCredential(trust: serverTrust))
+                }
+            )
         }
 
         if appModel.session == nil {

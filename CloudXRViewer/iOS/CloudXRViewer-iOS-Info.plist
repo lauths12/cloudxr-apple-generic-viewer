@@ -8,5 +8,7 @@
 	<string>$(NISSAN_CONFIGURATOR_APP_ID)</string>
 	<key>PURSE_CONFIGURATOR_APP_ID</key>
 	<string>$(PURSE_CONFIGURATOR_APP_ID)</string>
+	<key>CXRClientToken</key>
+	<string>$(CXR_CLIENT_TOKEN)</string>
 </dict>
 </plist>
