@@ -154,6 +154,21 @@ CloudXRViewer/
 
 The app supports configuration through `Config.xcconfig` for build-time settings and `Settings.bundle` for runtime settings accessible through the iOS Settings app.
 
+### Client Token Setup
+
+Connecting via **"Manual IP address"** with `.localSecure` requires a `clientToken`, which is read at runtime from the `CXRClientToken` value in each target's `Info.plist`. This value is injected at build time from `CXR_CLIENT_TOKEN` in `Secrets.xcconfig`, a file that is **not** committed to this repository.
+
+To set it up locally:
+
+1. Copy the template: `cp Secrets.xcconfig.example Secrets.xcconfig`
+2. Open `Secrets.xcconfig` and set your token:
+   ```
+   CXR_CLIENT_TOKEN = your-client-token-here
+   ```
+3. Build normally — `Config.xcconfig` includes `Secrets.xcconfig` automatically.
+
+**⚠️ Never commit `Secrets.xcconfig` or paste your token into source files, issues, pull requests, or commit messages.** It is already listed in `.gitignore` — do not remove it from there. If a token is ever exposed (committed, pasted in a public channel, etc.), treat it as compromised and request a new one instead of reusing it.
+
 ## Known Issues
 
 ### Code Signing and Apple Developer Program
